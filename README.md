@@ -1,6 +1,6 @@
 # Vulcan — AI 編程助手
 
-> **像 Cursor 一樣：雙擊就能用。** 基於 VS Code 深度定製的 AI 編程 IDE——Agent 自主編程、Tab 補全、Ctrl+K 行內編輯，全部跑在你自己的機器上。
+> **雙擊就能用。** AI 編程 IDE——Agent 自主編程、Tab 補全、Ctrl+K 行內編輯，全部跑在你自己的機器上。
 
 <!-- TODO(必填): 首屏循環 GIF（3-8 秒，建議：輸入需求 → Agent 改代碼 → diff 預覽 → 一鍵 Restore）
      放法：把 GIF 拖進 GitHub Release 資產或用 issue 上傳拿連結，然後：
@@ -21,11 +21,9 @@
 
 ## 🔒 隱私：你的代碼不出你的機器
 
-與雲端 AI IDE 的根本區別——Vulcan **沒有伺服器**：
-
-- **BYO Key**：Settings → Models 填入你自己的 API 金鑰（任何 OpenAI 相容端點），金鑰 per-request 傳給**本機**後端，不入庫、不上報
-- **本地後端**：編輯器啟動時自動拉起本地 FastAPI 後端，關窗即殺——同生共死，0 殘留進程
-- **離線檢索**：語義檢索模型隨安裝包分發，安裝即用，不聯網
+- **自帶金鑰**：在設定中填入你自己的 API 金鑰即可使用；金鑰只保存在你的機器上，不上報、不入庫
+- **全程本地**：代碼與對話只在本機處理，關閉視窗即完全退出，0 殘留進程
+- **離線檢索**：內建語義檢索模型，隨安裝包分發，安裝即用、不聯網
 
 ## 📥 下載
 
@@ -38,7 +36,7 @@
 
 1. 雙擊安裝包安裝，啟動 Vulcan
 2. 左下角齒輪 → **Settings → Models**，填入你的 API 端點與金鑰
-3. 左側 Activity Bar 的 ✨ 圖示 → **Vulcan Chat**，狀態點變綠即後端就緒
+3. 左側 Activity Bar 的 ✨ 圖示 → **Vulcan Chat**，狀態點變綠即就緒
 4. 輸入框勾選 **Agent** 開始自主編程；編輯器內直接體驗 **Tab** 補全與 **Ctrl+K**
 
 <!-- TODO(建議): 補一張 Settings→Models 配置截圖（記得打碼金鑰） -->
@@ -46,16 +44,13 @@
 ## ❓ FAQ
 
 **Q: 我的代碼會被上傳嗎？**
-不會經過我們。代碼只在你本機處理；需要模型時，由你本機的後端直接呼叫**你自己配置的** API 端點，內容僅在你與模型服務商之間傳輸。
+不會。代碼只在你本機處理；調用模型時，內容僅在你與你配置的模型服務之間傳輸。
 
 **Q: 支援哪些模型？**
-任何 OpenAI 相容 API（`/v1/chat/completions`）：官方 OpenAI、DeepSeek、Kimi、Qwen、本地 Ollama/vLLM 等均可。
+主流大模型 API 均可，在設定中填入端點與金鑰即可切換。
 
 **Q: 為什麼不開源？**
-Vulcan 是閉源產品（安裝時的 EULA 有完整說明）。它基於 VS Code（MIT, © Microsoft）構建，該層的開源義務由第三方聲明文件涵蓋。歡迎透過 Issues 回報問題與建議。
-
-**Q: 和直接裝 Copilot/Cursor 有什麼不同？**
-聚焦點不同：Vulcan 把 Agent 編排、上下文可視化與 MCP 觀測做成一等公民，且完全本地運行、BYO Key，不鎖模型供應商。
+Vulcan 是閉源產品。歡迎透過 Issues 回報問題與建議。
 
 ## 🐛 回饋
 
@@ -63,4 +58,4 @@ Vulcan 是閉源產品（安裝時的 EULA 有完整說明）。它基於 VS Cod
 
 ## License
 
-Vulcan 為專有軟體（見安裝時的 EULA）。內含 Visual Studio Code，MIT License © Microsoft Corporation，詳見安裝目錄內的 ThirdPartyNotices.txt。
+Vulcan 為專有軟體，授權條款見安裝時的 EULA。
